@@ -1,0 +1,24 @@
+# datasets
+*.db
+data/raw/
+data/processed/
+fraud_network.html
+
+# generated predictions
+data/predictions/
+
+# ML artifacts
+mlruns/
+models/
+
+# python
+__pycache__/
+*.pyc
+.venv/
+
+# environment
+.env
+
+# IDE
+.idea
+.vscode

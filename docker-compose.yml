@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+
+  fraud_api:
+    build: .
+    container_name: fraud_api
+    command: python -m uvicorn api.main:app --host 0.0.0.0 --port 8000 --app-dir .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+
+  fraud_dashboard:
+    build: .
+    container_name: fraud_dashboard
+    command: python -m streamlit run app/streamlit_app.py --server.port=8501 --server.address=0.0.0.0
+    ports:
+      - "8501:8501"
+    depends_on:
+      - fraud_api
+    volumes:
+      - .:/app
+    environment:
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
