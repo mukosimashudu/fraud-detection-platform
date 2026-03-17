@@ -31,23 +31,23 @@ The platform integrates multiple components:
 
 ### Dashboard Overview
 
-`<img src="Images/Dashboard_Overview.PNG" width="900">`{=html}
+<img src="Images/Dashboard_Overview.PNG" width="900">
 
 ### Model Performance
 
-`<img src="Images/model_performance.PNG" width="900">`{=html}
+<img src="Images/model_performance.PNG" width="900">
 
 ### Model Comparison
 
-`<img src="Images/model_comparison.PNG" width="900">`{=html}
+<img src="Images/model_comparison.PNG" width="900">
 
 ### SHAP Explainability
 
-`<img src="Images/SHAP_Explainability.PNG" width="900">`{=html}
+<img src="Images/SHAP_Explainability.PNG" width="900">
 
 ### Fraud Ring Detection
 
-`<img src="Images/Fraud_Ring_Detection.PNG" width="900">`{=html}
+<img src="Images/Fraud_Ring_Detection.PNG" width="900">
 
 ------------------------------------------------------------------------
 
@@ -85,7 +85,7 @@ Fraudsters often operate in collaborative networks.\
 This system detects suspicious transaction clusters using graph
 analytics.
 
-`<img src="Images/Fraud_Ring_Detection.PNG" width="900">`{=html}
+<img src="Images/Fraud_Ring_Detection.PNG" width="900">
 
 ------------------------------------------------------------------------
 
@@ -94,7 +94,7 @@ analytics.
 To ensure transparency, SHAP values are used to explain model
 predictions.
 
-`<img src="Images/SHAP_Explainability.PNG" width="900">`{=html}
+<img src="Images/SHAP_Explainability.PNG" width="900">
 
 This allows investigators to understand why a transaction was flagged as
 fraudulent.
