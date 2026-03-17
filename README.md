@@ -148,26 +148,14 @@ Allows fraud analysts to explore suspicious transactions and investigate alerts.
 
 # Dashboard Preview
 
-*(Add screenshots here after pushing the project)*
+### Dashboard Overview
+<img src="Images/Dashboard_Overview.PNG" width="900">
 
-Example:
+### SHAP Explainability
+<img src="Images/SHAP_Explainability.PNG" width="900">
 
-```
-screenshots/
-    dashboard_overview.png
-    shap_explainability.png
-    fraud_ring_detection.png
-```
-
-Example in README:
-
-```markdown
-![Dashboard Overview](screenshots/dashboard_overview.png)
-
-![SHAP Explainability](screenshots/shap_explainability.png)
-
-![Fraud Ring Detection](screenshots/fraud_ring_detection.png)```
-```
+### Fraud Ring Detection
+<img src="Images/Fraud_Ring_Detection.PNG" width="900">
 
 
 # Real-Time Fraud Scoring API
