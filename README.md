@@ -1,162 +1,68 @@
+# AI Banking Fraud Detection Platform
 
-# AI Fraud Detection Platform
+An end-to-end **Machine Learning Fraud Detection System** built with
+**Python, SQL, MLflow, FastAPI, Streamlit, and Network Analysis** to
+detect fraudulent financial transactions and fraud rings in real time.
 
-An end-to-end **AI-powered fraud detection platform** that detects suspicious financial transactions, explains model decisions, and identifies coordinated fraud rings.
+This project demonstrates a **production-style ML system** including
+data engineering, model training, explainability, API deployment, and
+interactive dashboards.
 
-The system integrates **machine learning, explainable AI, graph analytics, real-time APIs, and interactive dashboards** to simulate how modern financial institutions detect and investigate fraud.
-
----
-
-# Problem Statement
-
-Financial institutions process millions of transactions daily, making manual fraud detection impractical. Traditional rule-based fraud systems struggle to detect sophisticated attacks, particularly when fraudsters operate through **coordinated networks of cards, devices, and merchants**.
-
-This project addresses the problem by building an **AI-driven fraud detection system** capable of:
-
-• Detecting fraudulent transactions using machine learning
-• Explaining predictions using Explainable AI (SHAP)
-• Identifying fraud rings using graph analytics
-• Providing real-time scoring through an API
-• Enabling fraud investigation through an analyst dashboard
-
-The goal is to replicate the architecture used in **modern fintech fraud detection platforms**.
-
----
+------------------------------------------------------------------------
 
 # System Architecture
 
-The platform is built as a modular AI system combining **data engineering, machine learning, APIs, and visualization tools**.
+<img src="Images/system_architecture.png" width="1000">
 
-```
-Fraud Detection Platform
-│
-├── Data Pipeline
-│   ├── Raw Dataset
-│   ├── Feature Engineering
-│   └── Processed Data
-│
-├── Machine Learning Pipeline
-│   ├── SMOTE imbalance handling
-│   ├── Model comparison
-│   ├── Threshold optimization
-│   └── Best model selection
-│
-├── MLflow Experiment Tracking
-│
-├── FastAPI Fraud Scoring Service
-│
-├── Streamlit Fraud Dashboard
-│   ├── Model Performance
-│   ├── Transaction Scoring
-│   ├── Fraud Monitoring
-│   ├── SHAP Explainability
-│   ├── Fraud Forecasting
-│   ├── Fraud Assistant (LLM)
-│   ├── Fraud Ring Detection
-│   └── Investigation Console
-│
-└── Graph Analytics
-    └── Fraud community detection
-```
+The platform integrates multiple components:
 
----
+• Data Storage -- Transaction data stored in SQL database\
+• Feature Engineering -- Transaction features extracted and transformed\
+• Machine Learning Models -- Fraud detection using supervised learning\
+• MLflow Tracking -- Experiment tracking and model management\
+• FastAPI Service -- Real-time fraud scoring API\
+• Streamlit Dashboard -- Interactive monitoring interface\
+• Explainable AI -- SHAP explainability for model decisions\
+• Fraud Network Detection -- Graph-based fraud ring analysis
 
-# Key Achievements
-
-This project demonstrates a **complete fraud detection ecosystem** including:
-
-• Machine Learning Fraud Detection
-• Explainable AI using SHAP
-• Fraud Ring Detection using Graph Analytics
-• Real-Time Fraud Scoring API
-• Interactive Fraud Investigation Dashboard
-• MLflow Experiment Tracking
-• Dockerized Deployment
-
-The platform simulates how **banks and fintech companies detect and investigate fraud in real time**.
-
----
-
-# Model Performance
-
-Multiple machine learning models were trained and compared.
-
-Models evaluated:
-
-• Logistic Regression
-• Random Forest
-• XGBoost (Calibrated)
-
-Evaluation metrics:
-
-• Precision
-• Recall
-• F1 Score
-• ROC-AUC
-• PR-AUC
-
-The **best model is automatically selected using PR-AUC**, which is more appropriate for imbalanced fraud datasets.
-
-Example results:
-
-| Model               | Precision | Recall    | F1 Score | ROC-AUC   | PR-AUC    |
-| ------------------- | --------- | --------- | -------- | --------- | --------- |
-| Logistic Regression | High      | Moderate  | Balanced | Strong    | Good      |
-| Random Forest       | Very High | Good      | Strong   | Excellent | Very Good |
-| XGBoost             | Excellent | Excellent | Best     | Highest   | Highest   |
-
----
-
-# Dashboard Features
-
-The Streamlit dashboard functions as a **Fraud Monitoring Center**.
-
-### Model Performance
-
-Displays model evaluation metrics and comparison results.
-
-### Transaction Scoring
-
-Allows analysts to score individual transactions via the FastAPI service.
-
-### Fraud Monitoring
-
-Displays fraud statistics and dataset exploration.
-
-### SHAP Explainability
-
-Explains which features influenced fraud predictions.
-
-### Fraud Forecasting
-
-Identifies fraud trends and future risk patterns.
-
-### Fraud Ring Detection
-
-Uses graph analytics to identify suspicious networks of:
-
-• credit cards
-• merchants
-• devices
-• IP addresses
-
-### Investigation Console
-
-Allows fraud analysts to explore suspicious transactions and investigate alerts.
-
----
+------------------------------------------------------------------------
 
 # Dashboard Preview
 
 ### Dashboard Overview
-<img src="Images/Dashboard_Overview.PNG" width="900">
+
+`<img src="Images/Dashboard_Overview.PNG" width="900">`{=html}
+
+### Model Performance
+
+`<img src="Images/model_performance.PNG" width="900">`{=html}
+
+### Model Comparison
+
+`<img src="Images/model_comparison.PNG" width="900">`{=html}
 
 ### SHAP Explainability
-<img src="Images/SHAP_Explainability.PNG" width="900">
+
+`<img src="Images/SHAP_Explainability.PNG" width="900">`{=html}
 
 ### Fraud Ring Detection
-<img src="Images/Fraud_Ring_Detection.PNG" width="900">
 
+`<img src="Images/Fraud_Ring_Detection.PNG" width="900">`{=html}
+
+------------------------------------------------------------------------
+
+# Machine Learning Pipeline
+
+1.  Data ingestion\
+2.  Data preprocessing\
+3.  Feature engineering\
+4.  Handling class imbalance (SMOTE)\
+5.  Model training\
+6.  Model evaluation\
+7.  Experiment tracking with MLflow\
+8.  Model deployment via FastAPI
+
+------------------------------------------------------------------------
 
 # Real-Time Fraud Scoring API
 
@@ -164,160 +70,100 @@ The platform exposes a **FastAPI scoring service**.
 
 Endpoint:
 
-```
 POST /score_transaction
-```
 
 Example response:
 
-```json
-{
-  "fraud_probability": 0.91,
-  "predicted_class": 1,
-  "risk_level": "High"
+{ "fraud_probability": 0.91, "predicted_class": 1, "risk_level": "High"
 }
-```
 
-Interactive API documentation:
+------------------------------------------------------------------------
 
-```
-http://localhost:8000/docs
-```
+# Fraud Ring Detection
 
----
+Fraudsters often operate in collaborative networks.\
+This system detects suspicious transaction clusters using graph
+analytics.
 
-# Dataset
+`<img src="Images/Fraud_Ring_Detection.PNG" width="900">`{=html}
 
-The project uses the **Credit Card Fraud Detection Dataset**.
+------------------------------------------------------------------------
 
-Download from Kaggle:
+# Explainable AI (SHAP)
 
-[https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)
+To ensure transparency, SHAP values are used to explain model
+predictions.
 
+`<img src="Images/SHAP_Explainability.PNG" width="900">`{=html}
 
-The dataset is **not included in this repository due to size restrictions**.
+This allows investigators to understand why a transaction was flagged as
+fraudulent.
 
----
+------------------------------------------------------------------------
 
-# Installation
+# Technology Stack
 
-Clone the repository:
+  Category              Tools
+  --------------------- ---------------
+  Programming           Python
+  Data Processing       Pandas, NumPy
+  Machine Learning      Scikit-learn
+  Experiment Tracking   MLflow
+  API                   FastAPI
+  Dashboard             Streamlit
+  Explainability        SHAP
+  Graph Analysis        NetworkX
+  Containerization      Docker
 
-```
+------------------------------------------------------------------------
+
+# Project Structure
+
+fraud-detection-platform │ ├── api/ \# FastAPI fraud scoring API ├──
+app/ \# Streamlit dashboard ├── data/ \# Dataset ├── databases/ \# SQL
+database files ├── src/ \# ML training pipeline ├── models/ \# Trained
+models ├── Images/ \# README screenshots ├── docker-compose.yml ├──
+Dockerfile └── README.md
+
+------------------------------------------------------------------------
+
+# Running the Project
+
+### Clone repository
+
 git clone https://github.com/mukosimashudu/fraud-detection-platform.git
-cd fraud-detection-platform
-```
 
-Install dependencies:
+### Install dependencies
 
-```
 pip install -r requirements.txt
-pip install -r requirements_api.txt
-```
 
----
+### Train models
 
-# Train the Model
-
-```
 python -m src.train
-```
 
-This will:
+### Run API
 
-• prepare the dataset
-• train multiple models
-• select the best model
-• save the model and threshold
+uvicorn api.main:app --reload
 
----
+### Run dashboard
 
-# Run the API
-
-```
-python -m uvicorn api.main:app --host 0.0.0.0 --port 8000
-```
-
-API docs:
-
-```
-http://localhost:8000/docs
-```
-
----
-
-# Run the Dashboard
-
-```
 streamlit run app/streamlit_app.py
-```
 
-Dashboard:
-
-```
-http://localhost:8501
-```
-
----
-
-# Docker Deployment
-
-Build containers:
-
-```
-docker compose build
-```
-
-Start services:
-
-```
-docker compose up
-```
-
-Services:
-
-Dashboard
-
-```
-http://localhost:8501
-```
-
-API
-
-```
-http://localhost:8000/docs
-```
-
----
-
-# Technologies Used
-
-Python
-Scikit-learn
-XGBoost
-Streamlit
-FastAPI
-MLflow
-SHAP
-NetworkX
-PyVis
-Docker
-
----
+------------------------------------------------------------------------
 
 # Future Improvements
 
-Planned upgrades include:
+• Real-time streaming fraud detection\
+• Graph neural networks for fraud rings\
+• Cloud deployment (AWS / Azure)\
+• CI/CD MLOps pipeline
 
-• Data drift monitoring
-• Model registry
-• Real-time fraud alerts
-• Cloud deployment
-• Automated retraining pipeline
-
----
+------------------------------------------------------------------------
 
 # Author
 
-Mashudu Mukosi
+**Mashudu Mukosi**\
+Data Scientist \| Machine Learning Engineer
 
+GitHub\
+https://github.com/mukosimashudu
